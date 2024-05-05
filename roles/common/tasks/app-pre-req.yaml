@@ -1,0 +1,14 @@
+- name: delete app folder
+  ansible.builtin.file:
+   path: "{{app_location}}"
+   state: absent
+
+- name: create app directory
+  ansible.builtin.file:
+    path: "{{app_location}}"
+    state: directory
+
+- name: unarchieve
+  ansible.builtin.unarchive:
+    src: "{{app_location}}"
+    dest: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{component}}-v2.zip" 
