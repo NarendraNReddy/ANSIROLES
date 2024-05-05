@@ -1,4 +1,4 @@
 - name: restart nginix
   ansible.builtin.dnf:
     name: nginx 
-    state: restarted
+    state: restarted 
