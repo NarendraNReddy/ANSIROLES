@@ -4,5 +4,9 @@
   tasks:
   - name: install postfix
     ansible.builtin.dnf:
-      name: postfix
+      name: "{{item}}"
       state: latest
+    loop:
+    - postfix
+    - mysql
+    - nginx  
